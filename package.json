@@ -1,0 +1,17 @@
+{
+  "name": "admins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "node enrollAdmin.js",
+    "add": "node registerUser.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fabric-ca-client": "^2.2.0",
+    "fabric-network": "^2.2.0"
+  }
+}
