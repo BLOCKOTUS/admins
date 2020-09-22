@@ -60,7 +60,7 @@ async function main(id) {
     
     console.log(`Successfully registered and enrolled client user "${id}" and imported it into the wallet`);
     
-    return;
+    return true;
 }
 
 const args = process.argv.slice(2);
