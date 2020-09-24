@@ -39,12 +39,12 @@ async function main(id) {
     const secret = await ca.register({
         affiliation: 'org1.department1',
         enrollmentID: id,
-        role: 'client'
+        role: 'client',
     }, adminUser);
     
     const enrollment = await ca.enroll({
         enrollmentID: id,
-        enrollmentSecret: secret
+        enrollmentSecret: secret,
     });
     
     const x509Identity = {
@@ -68,4 +68,4 @@ const id = args[args.indexOf('-id') + 1];
 
 if(id) main(id);
 
-module.exports = { main }
+module.exports = { main };
