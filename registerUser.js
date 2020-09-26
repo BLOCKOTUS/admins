@@ -21,7 +21,6 @@ async function main(id) {
     // Create a new file system based wallet for managing identities.
     const walletPath = path.join(__dirname, '..', '..', 'wallet');
     const wallet = await Wallets.newFileSystemWallet(walletPath);
-    console.log(`Wallet path: ${walletPath}`);
 
     // Check to see if we've already enrolled the user.
     const userIdentity = await wallet.get(id);
@@ -57,8 +56,6 @@ async function main(id) {
     };
 
     await wallet.put(id, x509Identity);
-    
-    console.log(`Successfully registered and enrolled client user "${id}" and imported it into the wallet`);
     
     return true;
 }
