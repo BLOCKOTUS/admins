@@ -60,9 +60,4 @@ async function main(id) {
     return true;
 }
 
-const args = process.argv.slice(2);
-const id = args[args.indexOf('-id') + 1];
-
-if(id) main(id);
-
 module.exports = { main };
