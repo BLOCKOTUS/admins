@@ -1,6 +1,6 @@
 {
   "name": "blockotus-organ-admins",
-  "version": "0.2.0-beta",
+  "version": "0.2.0-alpha",
   "description": "",
   "main": "index.js",
   "scripts": {
