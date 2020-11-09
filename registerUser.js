@@ -1,11 +1,7 @@
 import FabricCAServices from 'fabric-ca-client';
 import { Wallets } from 'fabric-network';
 import fs from 'fs';
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import path from 'path';
 
 /**
  * Register a new user in the network and creates a wallet file.

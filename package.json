@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create": "node enrollAdmin.js",
-    "add": "node registerUser.js",
+    "create": "node dist/enrollAdmin.js",
+    "add": "node dist/registerUser.js",
+    "build": "babel *.js -d dist",
     "lint": "eslint ./"
   },
   "repository": {
@@ -15,12 +16,15 @@
   },
   "author": "Daniel Febrero",
   "license": "AGPL-3.0",
-  "type": "module",
   "dependencies": {
+    "core-js": "^3.7.0",
     "fabric-ca-client": "^2.2.0",
     "fabric-network": "^2.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.9.0",
     "eslint-plugin-flowtype": "^5.2.0",

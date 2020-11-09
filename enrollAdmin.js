@@ -1,12 +1,7 @@
 import { Wallets } from 'fabric-network';
 import FabricCAServices from 'fabric-ca-client';
 import fs from 'fs';
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+import path from 'path';
 /**
  * Enroll an admin with `admin` username.
  */
