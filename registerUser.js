@@ -1,15 +1,18 @@
-/*
- * SPDX-License-Identifier: Apache-2.0
+import FabricCAServices from 'fabric-ca-client';
+import { Wallets } from 'fabric-network';
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+/**
+ * Register a new user in the network and creates a wallet file.
+ * 
+ * @param {string} username
  */
-
-'use strict';
-
-const { Wallets } = require('fabric-network');
-const FabricCAServices = require('fabric-ca-client');
-const fs = require('fs');
-const path = require('path');
-
-async function main(id) {
+export const main = async (username) => {
     // load the network configuration
     const ccpPath = path.resolve(__dirname, '..', '..', 'network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
     const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
@@ -23,8 +26,8 @@ async function main(id) {
     const wallet = await Wallets.newFileSystemWallet(walletPath);
 
     // Check to see if we've already enrolled the user.
-    const userIdentity = await wallet.get(id);
-    if (userIdentity) throw new Error(`An identity for the user "${id}" already exists in the wallet`);
+    const userIdentity = await wallet.get(username);
+    if (userIdentity) throw new Error(`An identity for the user "${username}" already exists in the wallet`);
 
     // Check to see if we've already enrolled the admin user.
     const adminIdentity = await wallet.get('admin');
@@ -37,12 +40,12 @@ async function main(id) {
     // Register the user, enroll the user, and import the new identity into the wallet.
     const secret = await ca.register({
         affiliation: 'org1.department1',
-        enrollmentID: id,
+        enrollmentID: username,
         role: 'client',
     }, adminUser);
     
     const enrollment = await ca.enroll({
-        enrollmentID: id,
+        enrollmentID: username,
         enrollmentSecret: secret,
     });
     
@@ -55,9 +58,7 @@ async function main(id) {
         type: 'X.509',
     };
 
-    await wallet.put(id, x509Identity);
+    await wallet.put(username, x509Identity);
     
     return true;
-}
-
-module.exports = { main };
+};

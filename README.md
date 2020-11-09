@@ -21,8 +21,8 @@
 
 <br />
 
-# || BLOCKOTUS || Admins Organ
-## Hyperledger Fabric Chaincode
+# || BLOCKOTUS || Admins Tools
+## Hyperledger Fabric Tools
 
 <br />
 <br />

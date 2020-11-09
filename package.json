@@ -1,6 +1,6 @@
 {
   "name": "blockotus-organ-admins",
-  "version": "0.2.0-alpha",
+  "version": "0.2.3-alpha",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   },
   "author": "Daniel Febrero",
   "license": "AGPL-3.0",
+  "type": "module",
   "dependencies": {
     "fabric-ca-client": "^2.2.0",
     "fabric-network": "^2.2.0"
