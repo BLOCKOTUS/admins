@@ -40,13 +40,13 @@ var main = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             // load the network configuration
-            ccpPath = _path["default"].resolve(__dirname, '..', '..', 'network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
+            ccpPath = _path["default"].resolve(__dirname, '..', '..', '..', 'network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
             ccp = JSON.parse(_fs["default"].readFileSync(ccpPath, 'utf8')); // Create a new CA client for interacting with the CA.
 
             caURL = ccp.certificateAuthorities['ca.org1.example.com'].url;
             ca = new _fabricCaClient["default"](caURL); // Create a new file system based wallet for managing identities.
 
-            walletPath = _path["default"].join(__dirname, '..', '..', 'wallet');
+            walletPath = _path["default"].join(__dirname, '..', '..', '..', 'wallet');
             _context.next = 7;
             return _fabricNetwork.Wallets.newFileSystemWallet(walletPath);
 
