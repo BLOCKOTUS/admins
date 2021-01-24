@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "create": "node dist/enrollAdmin.js",
     "add": "node dist/registerUser.js",
-    "build": "babel *.js -d dist",
-    "lint": "eslint ./"
+    "build": "rm -rf dist/* && babel lib/*.js -d dist",
+    "lint": "eslint ./lib"
   },
   "repository": {
     "type": "git",
