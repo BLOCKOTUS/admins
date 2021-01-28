@@ -34,7 +34,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
  */
 var main = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(username) {
-    var ccpPath, ccp, caURL, ca, walletPath, wallet, userIdentity, adminIdentity, provider, adminUser, secret, enrollment, x509Identity;
+    var ccpPath, ccp, caURL, ca, walletPath, wallet, userIdentity, adminIdentity, provider, adminUser, secret, enrollment, x509Identity, newUser;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -116,9 +116,14 @@ var main = /*#__PURE__*/function () {
             return wallet.put(username, x509Identity);
 
           case 31:
-            return _context.abrupt("return", true);
+            _context.next = 33;
+            return provider.getUserContext(x509Identity, username);
 
-          case 32:
+          case 33:
+            newUser = _context.sent;
+            return _context.abrupt("return", newUser);
+
+          case 35:
           case "end":
             return _context.stop();
         }

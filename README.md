@@ -48,12 +48,12 @@
 <br />
 <br />
 
-## _Tools_ compatible with || BLOCKOTUS || Organism_
+## _Tool compatible with || BLOCKOTUS || Organism_
 
+Build complete decentralized applications with __Blockotus Open and Decentralized Standard__ and __Hyperledger Fabric__. 
 
-Build complete decentralized applications with BLOCKOTUS Organism. 
+The kit includes a Frontend (Svelte / React), a Backend (Nodejs / Express), a Network and Chaincode Contracts (Hyperledger Fabric) as specified by Blockotus Open and Decentralized Standard.
 
-Easily create a webapp that includes a Frontend (Svelte / React), a Backend (Nodejs / Express), a Network and Chaincode Contracts (Hyperledger Fabric, Chaincode Contracts).
 
 <br />
 <br />
